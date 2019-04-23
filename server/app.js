@@ -1,6 +1,11 @@
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+// mongo models
+
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/APIAuth', { useNewUrlParser: true });
 
 const app = express();
 
