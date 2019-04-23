@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 // mongo models
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/APIAuth', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/APIAuth', { useNewUrlParser: true, useCreateIndex: true });
 
 const app = express();
 
