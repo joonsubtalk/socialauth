@@ -28,10 +28,10 @@ module.exports = {
         });
         await newUser.save();
 
-        // respond with token
-        // res.json({user: 'created'});
+        // generate token
         const token = signToken(newUser, new Date());
 
+        // respond with token
         res.status(200).json({token});
     },
     signIn: async(req, res, next) => {
@@ -40,5 +40,6 @@ module.exports = {
     },
     secret: async(req, res, next) => {
         console.log('UsersController.secret() called!')
+        res.json({secret: 'p@ssw0rd'})
     },
 }
